@@ -19,6 +19,7 @@
             <li><a href="{{route('contact')}}">Contact</a></li>
             <li><a href="{{route('users')}}">users</a></li>
             <li><a href="{{route('first-post')}}">Blog</a></li>
+            {{-- <li><a href="{{route('check-users')}}">Check Users</a></li> --}}
         </ul>
     </nav>
     <main>

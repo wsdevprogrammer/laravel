@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
+
+use App\Http\Controllers\UsersController;
+use App\Http\Controllers\TestingController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -59,6 +62,17 @@ Route::get('/user-detail/{id}',function($id){
     $user = $users[$id];
     return view('pages.user-detail',['id' => $user]);
 })->name('user-detail');
+
+// practicing controllers
+
+
+Route::controller(UsersController::class)->group(function(){
+    Route::get('/check-users/{id}','showUser')->name('check-users');
+    Route::get('/home','showHome')->name('home');
+    
+});
+
+Route::get('/testing',TestingController::Class);
 
 Route::fallback(function(){
     return view('pages/404');
